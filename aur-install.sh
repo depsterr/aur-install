@@ -8,6 +8,7 @@ aurrd=""
 
 # Make sure the directory exists
 [ -d "$HOME/.aur-install" ] || mkdir "$HOME/.aur-install"
+# Check if already downloaded
 [ -d "$HOME/.aur-install/$1" ] && \
 	read -p "It appears you have already downloaded this package, do you wish to redownload or install from disc? [r/d] (redownload/disc) " aurrd && \
 	[ "$aurrd" = "d" ] || rm "$HOME/.aur-install/$1" -rf
@@ -18,7 +19,5 @@ aurrd=""
 # Install the package
 echo "Installing..."
 cd "$HOME/.aur-install/$1" && \
-	makepkg -Asrif --skipinteg
-
-# Clean up
-rm "$HOME/.aur-install/$1" -rf
+	makepkg -Asrif --skipinteg && \ 
+	rm "$HOME/.aur-install/$1" -rf # Only clean up files if install was successfull
