@@ -3,9 +3,6 @@
 # No args
 [ -z "$1" ] && echo "Error: no package specified" && exit
 
-# Make sure aurrd variable is not set
-aurrd=""
-
 # Make sure the directory exists
 [ -d "$HOME/.aur-install" ] || mkdir "$HOME/.aur-install"
 # Check if already downloaded
@@ -19,5 +16,7 @@ aurrd=""
 # Install the package
 echo "Installing..."
 cd "$HOME/.aur-install/$1" && \
-	makepkg -Asrif --skipinteg && \ 
-	rm "$HOME/.aur-install/$1" -rf # Only clean up files if install was successfull
+	makepkg -Asrif --skipinteg
+
+read -p "Do you want to remove the downloaded directory? (This will not affect the install) [y/n] " yn
+[ "$yn" = "y" ] && rm "$HOME/.aur-install/$1" -rf # Only clean up files if install was successfull
