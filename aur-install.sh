@@ -19,4 +19,4 @@ cd "$HOME/.aur-install/$1" && \
 	makepkg -Asrif --skipinteg
 
 read -p "Do you want to remove the downloaded directory? (This will not affect the install) [y/n] " yn
-[ "$yn" = "y" ] && rm "$HOME/.aur-install/$1" -rf # Only clean up files if install was successfull
+[ "$yn" = "y" ] && rm "$HOME/.aur-install/$1" -rf
