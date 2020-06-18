@@ -1,4 +1,6 @@
 # aur-install
+![Shellcheck](https://github.com/depsterr/aur-install/workflows/Shellcheck/badge.svg)
+
 An extremely simple aur package installer
 
 PACKAGES FROM THE AUR ARE MADE BY USERS AND INSTALLED ON YOUR OWN RISK
