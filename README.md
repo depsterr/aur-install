@@ -12,7 +12,7 @@ aur-install <package name>
 # Installation
 
 ```
-$ git clone https://github.com/depsterr/aur-install.git
-$ cd aur-install
-# sh install.sh
+git clone https://github.com/depsterr/aur-install.git
+cd aur-install
+sudo make install
 ```
